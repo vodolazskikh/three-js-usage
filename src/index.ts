@@ -1,5 +1,6 @@
 import { drawCube } from './drawers/cube'
 import { drawLine } from './drawers/line'
+import { drawModel } from './drawers/model'
 
 const select = document.getElementById('select')
 
@@ -13,7 +14,10 @@ select.onchange = (e) => {
         case 'line':
             drawLine()
             break
+        case 'model':
+            drawModel()
+            break
     }
 }
 // Изначальная сцена
-drawCube()
+drawModel()

@@ -36,12 +36,17 @@ export function drawLine() {
     target.appendChild(renderer.domElement)
 
     // Готовим линию
-    const material = new LineBasicMaterial({ color: 0x0000ff })
+    const material = new LineBasicMaterial({ color: 'blue' })
 
     const points = []
-    points.push(new Vector3(-10, 0, 0))
+    points.push(new Vector3(0, 0, 0))
     points.push(new Vector3(0, 10, 0))
+    points.push(new Vector3(10, 10, 0))
     points.push(new Vector3(10, 0, 0))
+    points.push(new Vector3(0, 0, 0))
+    points.push(new Vector3(0, 0, 10))
+    points.push(new Vector3(0, 10, 10))
+    points.push(new Vector3(0, 10, 0))
 
     const geometry = new BufferGeometry().setFromPoints(points)
 
@@ -53,9 +58,9 @@ export function drawLine() {
     // Рендерим и анимируем куб
     function animate() {
         requestAnimationFrame(animate)
-        line.rotation.x += 0.02
-        line.rotation.y += 0.02
-        line.rotation.z += 0.02
+        line.rotation.x += 0.005
+        line.rotation.y += 0.005
+        line.rotation.z += 0.005
 
         renderer.render(scene, camera)
     }
